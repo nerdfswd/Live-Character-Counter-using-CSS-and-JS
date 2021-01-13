@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Character Counter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color:#4cb0f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container{
+            width: 40%;
+            height:50vh;
+            padding: 2rem;
+            display:flex;
+            flex-direction: column;
+            background-color:rgb(147, 222, 252);
+            box-shadow: 1px 2px 1px 1px rgb(31, 30, 30);
+        }
+        .container h3{
+            font-weight: bolder;
+            font-size:24px;
+            color:black;
+            align-self: center;
+            padding-bottom: 1.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        textarea{
+            padding:12px;
+            position: relative;
+            font-size: 14px;
+            resize:none;
+            margin-bottom: 2rem;
+            height:200px;
+            width: 90% !Important;
+            border: none;
+            outline: none;
+            margin-right: 1rem;
+        }
+        .container p{
+            padding-left:0.2rem;
+            font-size: 18px;
+            align-self: left;
+            font-weight:bold;
+            color:black;
+        }
+        .count{
+            color:red;
+            font-size:18px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Live Character Counter</h3>
+        <textarea placeholder="Enter your text here..." onkeyup="counter();"></textarea>
+        <p>Total characters: <span class="count">0</span></p>
+    </div>
+    <script type="text/javascript">
+        const textarea = document.querySelector('textarea');
+        const count = document.querySelector('.count');
+
+        function counter(){
+            const text = textarea.value;
+            const textLength = text.length;
+            count.innerHTML = textLength;
+        }
+    </script>
+</body>
+</html>
